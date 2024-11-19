@@ -1,0 +1,12 @@
+# domain.cnf
+
+# Use the openssl.cnf as a base
+.include ./custom.cnf
+
+# Set the CN field dynamically using a variable
+[req]
+prompt = no
+distinguished_name = req_distinguished_name
+
+[req_distinguished_name]
+commonName = ${ENV::CUSTOM_CN}

@@ -1,0 +1,20 @@
+[req]
+default_bits = 2048
+prompt = yes
+distinguished_name = req_distinguished_name
+
+[req_distinguished_name]
+countryName = Country Name (2 letter code)
+countryName_default = NZ
+
+stateOrProvinceName = State or Province Name (full name)
+stateOrProvinceName_default = AK
+
+localityName = Locality Name (eg, city)
+localityName_default = Auckland
+
+organizationName = Organization Name (eg, company)
+organizationName_default = "Example Dot Com"
+
+commonName = Common Name (eg, your name or your server's hostname)
+commonName_default = "Training"
