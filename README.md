@@ -10,7 +10,7 @@ https://deliciousbrains.com/ssl-certificate-authority-for-local-https-developmen
 
 ## Create the certificates  
 
-Before you run the script the first time, open up custom.cnf and set any defaults you want for the fake CA certificate. The values don't really matter too much as the only person seeing the values will be you the developer. Probably the key one is the Common Name as that will help identify the root certificate as yours, so maybe use a name like "MY NAME Developer CA".
+Before you run the script the first time, open up custom.cnf and set any defaults you want for the custom CA certificate. The values don't really matter too much as the only person seeing the values will be you the developer. Probably the key one is the Common Name as that will help identify the root certificate as yours, so maybe use a name like "MY NAME Developer CA".
 
 The script uses openssl to create the certs, so you need to either run in on Linux or using Git Bash in Windows. The easiest way to install Git Bash on Windows is to install [Git for Windows](https://gitforwindows.org/).
 
@@ -31,9 +31,9 @@ You will be prompted to create the private key file first and you will need to g
 
 It will then create a public key (the PEM file) and to do that it will ask you for the password of the private key created in the previous step.
 
-These two files will be created in the same directory as the script. (And a myCA.srl file). Keep those files, as the next time you run the script it will just reuse them as the CA root certificate files to generate new certificates for your fake domains. You will also need the PEM file later on to import into the certificate store of your developer machine. If you were a real Certificate Authority then you would guard the myCA.key file carefully - if someone else stole that they could generate their own PEM file and pretend to be you. Which is bad. Very bad.  
+These two files will be created in the same directory as the script. (And a myCA.srl file). Keep those files, as the next time you run the script it will just reuse them as the CA root certificate files to generate new certificates for your custom domains. You will also need the PEM file later on to import into the certificate store of your developer machine. If you were a real Certificate Authority then you would guard the myCA.key file carefully - if someone else stole that they could generate their own PEM file and pretend to be you. Which is bad. Very bad.  
 
-You do want to re-use these fake CA certificates if you can, because it saves you having to reimport the PEM file into your developer machine(s) again. The script defaults the expiry date of your CA and domain certs to 20 years in the future so you shouldn't have to redo it for the same machine again.
+You do want to re-use these custom CA certificates if you can, because it saves you having to reimport the PEM file into your developer machine(s) again. The script defaults the expiry date of your CA and domain certs to 20 years in the future so you shouldn't have to redo it for the same machine again.
 
 Do remember the password to your myCA.key file, as if you use them to generate a different domain cert it will ask you for that password.
 
