@@ -27,11 +27,11 @@ echo
 echo
 
 print_usage() {
-  echo "Usage: $0 -d|--domain <domain> [-o|--output <output_folder>] [-h|--help]"
-  echo "  -d, --domain       Specify the domain name (required)"
-  echo "  -o, --output       Specify the output folder (optional, default is 'certs' in script's directory)"
-  echo "  -s, --san          Specify one or more Subject Alternative Name (SAN) DNS entries (optional)"
-  echo "  -h, --help         Display this help message"
+  echo "Usage: $0 -d|-domain <domain> [-o|-output <output_folder>] [-h|-help]"
+  echo "  -d, -domain       Specify the domain name (required)"
+  echo "  -o, -output       Specify the output folder (optional, default is 'certs' in script's directory)"
+  echo "  -s, -san          Specify one or more Subject Alternative Name (SAN) DNS entries (optional)"
+  echo "  -h, -help         Display this help message"
   echo ""
   echo "Examples:"
   if [ "$WINDOWS_ENV" = true ]; then
