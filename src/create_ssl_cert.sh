@@ -51,7 +51,7 @@ validate_domain() {
 
   # Check if the domain is valid
   if ! [[ "$domain" =~ ^(\*\.)?([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+$ ]]
-   then
+  then
     return 1
   fi
 
@@ -168,8 +168,9 @@ fi
 
 if [ ! -f $MYCA_PEM ]; then
   echo
-  echo -e "${BLUE}Creating a Root Certificate PEM file.......${RESET}"
-  $OPENSSL_CMD req -x509 -new -nodes -key $MYCA_KEY -sha256 -days 7300 -out $MYCA_PEM
+  echo -e "${BLUE}Creating a Root Certificate PEM file with CA:TRUE.......${RESET}"
+  $OPENSSL_CMD req -x509 -new -nodes -key $MYCA_KEY -sha256 -days 7300 \
+    -config "$CUSTOM_OPENSSL_CONF" -extensions v3_ca -out $MYCA_PEM
 fi
 
 echo

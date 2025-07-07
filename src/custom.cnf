@@ -18,3 +18,9 @@ organizationName_default = "Example Dot Com"
 
 commonName = Common Name (eg, your name or your server's hostname)
 commonName_default = "Training"
+
+[ v3_ca ]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:TRUE
+keyUsage = critical, keyCertSign, cRLSign
