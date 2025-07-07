@@ -12,7 +12,7 @@ https://deliciousbrains.com/ssl-certificate-authority-for-local-https-developmen
 
 Before you run the script the first time, open up custom.cnf and set any defaults you want for the custom CA certificate. The values don't really matter too much as the only person seeing the values will be you the developer. Probably the key one is the Common Name as that will help identify the root certificate as yours, so maybe use a name like "MY NAME Developer CA".
 
-The script uses openssl to create the certs, so you need to either run in on Linux or using Git Bash in Windows. The easiest way to install Git Bash on Windows is to install [Git for Windows](https://gitforwindows.org/).
+The script uses openssl to create the certs, so you need to either run in on Linux or using Git Bash in Windows. An easy way to install Git Bash on Windows is to install [Git for Windows](https://gitforwindows.org/).
 
 ### Script arguments  
 
